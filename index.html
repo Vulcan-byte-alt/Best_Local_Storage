@@ -190,13 +190,77 @@
             }
         }
 
-        html{
+        html {
             scroll-behavior: smooth;
+        }
+
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #111827;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            /* Add this line to stack items vertically */
+            justify-content: center;
+            align-items: center;
+            transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        .loading-screen.loaded {
+            transform: translateY(-100%);
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 3px solid #ffffff;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            animation: loader 1s linear infinite;
+            display: block;
+        }
+
+        @keyframes loader {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Prevent scroll during loading */
+        .loading {
+            overflow: hidden;
+        }
+
+        .loading-tips {
+            display: block;
+            font-size: 0.875rem;
+            opacity: 0.6;
+            max-width: 300px;
+            text-align: center;
+            margin-top: 1rem;
+            color: aliceblue;
         }
     </style>
 </head>
 
 <body class="bg-gray-900 custom-scrollbar">
+
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+        <div class="loading-tips fade-up" style="animation-delay: 0.5s">
+            "Did you know? Over 50,000 storage facilities compete for excellence each year."
+        </div>
+    </div>
+
+
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-40 transition-all duration-500 bg-gray-900/95 backdrop-blur-sm" id="mainNav">
         <div class="container mx-auto px-6">
@@ -1630,6 +1694,54 @@
                 mobileMenu.classList.add('hidden');
             }
         });
+
+        document.body.classList.add('loading');
+
+        function hideLoader() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.classList.add('loaded');
+            document.body.classList.remove('loading');
+
+            const tips = [
+                "Did you know? Over 50,000 storage facilities compete for excellence each year.",
+                "Our awards recognize innovation in self-storage design and service.",
+                "Join thousands of voters in celebrating industry excellence.",
+                "Loading your premium storage awards experience..."
+            ];
+
+            let tipIndex = 0;
+            const tipElement = document.querySelector('.loading-tips');
+
+            function changeTip() {
+                tipElement.style.opacity = '0';
+                setTimeout(() => {
+                    tipElement.textContent = tips[tipIndex];
+                    tipElement.style.opacity = '1';
+                    tipIndex = (tipIndex + 1) % tips.length;
+                }, 500);
+            }
+
+            setInterval(changeTip, 3000);
+
+            // Start content animations after loader is hidden
+            setTimeout(() => {
+                animateNumber('facilitiesCount', 500);
+                animateNumber('votesCount', 25000);
+                animateNumber('categoriesCount', 12);
+            }, 1000);
+        }
+
+        function checkVideoLoaded() {
+            const video = document.querySelector('video');
+            if (video.readyState >= 3) { // HAVE_FUTURE_DATA state
+                hideLoader();
+            } else {
+                video.addEventListener('canplay', hideLoader);
+            }
+        }
+
+        // Call checkVideoLoaded to start the process
+        checkVideoLoaded();
     </script>
 
 </body>
