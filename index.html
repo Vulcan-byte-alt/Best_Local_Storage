@@ -1697,56 +1697,73 @@
 
         document.body.classList.add('loading');
 
-            const tips = [
-                "Did you know? Over 50,000 storage facilities compete for excellence each year.",
-                "Our awards recognize innovation in self-storage design and service.",
-                "Join thousands of voters in celebrating industry excellence.",
-                "Loading your premium storage awards experience..."
-            ];
+        const tips = [
+            "Did you know? Over 50,000 storage facilities compete for excellence each year.",
+            "Our awards recognize innovation in self-storage design and service.",
+            "Join thousands of voters in celebrating industry excellence.",
+            "Loading your premium storage awards experience..."
+        ];
 
-            let tipIndex = 0;
-            const tipElement = document.querySelector('.loading-tips');
+        let tipIndex = 0;
+        const tipElement = document.querySelector('.loading-tips');
 
-
-            function changeTip() {
-                tipElement.style.opacity = '0';
-                setTimeout(() => {
+        function changeTip() {
+            // Animate the current tip out
+            gsap.to(tipElement, {
+                y: -20, // Slide up
+                opacity: 0,
+                duration: 0.5,
+                ease: 'power2.in',
+                onComplete: () => {
+                    // Change the text content
                     tipElement.textContent = tips[tipIndex];
-                    tipElement.style.opacity = '1';
                     tipIndex = (tipIndex + 1) % tips.length;
-                }, 500);
-            }
 
-            // Initialize the tips before anything is loaded
-            tipElement.textContent = tips[tipIndex];
-            tipIndex = (tipIndex + 1) % tips.length;
-            setInterval(changeTip, 3000);
-
-            function hideLoader() {
-                const loadingScreen = document.getElementById('loadingScreen');
-                loadingScreen.classList.add('loaded');
-                document.body.classList.remove('loading');
-
-                // Start content animations after loader is hidden
-                setTimeout(() => {
-                    animateNumber('facilitiesCount', 500);
-                    animateNumber('votesCount', 25000);
-                    animateNumber('categoriesCount', 12);
-                }, 1000);
-            }
-
-            function checkVideoLoaded() {
-                const video = document.querySelector('video');
-                if (video.readyState >= 3) {
-                    hideLoader();
-                } else {
-                    video.addEventListener('canplay', hideLoader);
+                    // Animate the new tip in
+                    gsap.fromTo(tipElement, {
+                        y: 20,  // Start below
+                        opacity: 0,
+                    }, {
+                        y: 0,   // Slide up
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: 'power2.out'
+                    });
                 }
+            });
+        }
+
+
+        // Initialize the tips before anything is loaded
+        tipElement.textContent = tips[tipIndex];
+        tipIndex = (tipIndex + 1) % tips.length;
+        setInterval(changeTip, 3000);
+            
+        function hideLoader() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.classList.add('loaded');
+            document.body.classList.remove('loading');
+
+            // Start content animations after loader is hidden
+            setTimeout(() => {
+                animateNumber('facilitiesCount', 500);
+                animateNumber('votesCount', 25000);
+                animateNumber('categoriesCount', 12);
+            }, 1000);
+        }
+
+        function checkVideoLoaded() {
+            const video = document.querySelector('video');
+            if (video.readyState >= 3) {
+                hideLoader();
+            } else {
+                video.addEventListener('canplay', hideLoader);
             }
+        }
 
 
-            // Call checkVideoLoaded to start the process
-            checkVideoLoaded();
+        // Call checkVideoLoaded to start the process
+        checkVideoLoaded();
     </script>
 
 </body>
