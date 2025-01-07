@@ -1697,11 +1697,6 @@
 
         document.body.classList.add('loading');
 
-        function hideLoader() {
-            const loadingScreen = document.getElementById('loadingScreen');
-            loadingScreen.classList.add('loaded');
-            document.body.classList.remove('loading');
-
             const tips = [
                 "Did you know? Over 50,000 storage facilities compete for excellence each year.",
                 "Our awards recognize innovation in self-storage design and service.",
@@ -1712,6 +1707,7 @@
             let tipIndex = 0;
             const tipElement = document.querySelector('.loading-tips');
 
+
             function changeTip() {
                 tipElement.style.opacity = '0';
                 setTimeout(() => {
@@ -1721,27 +1717,36 @@
                 }, 500);
             }
 
+            // Initialize the tips before anything is loaded
+            tipElement.textContent = tips[tipIndex];
+            tipIndex = (tipIndex + 1) % tips.length;
             setInterval(changeTip, 3000);
 
-            // Start content animations after loader is hidden
-            setTimeout(() => {
-                animateNumber('facilitiesCount', 500);
-                animateNumber('votesCount', 25000);
-                animateNumber('categoriesCount', 12);
-            }, 1000);
-        }
+            function hideLoader() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.classList.add('loaded');
+                document.body.classList.remove('loading');
 
-        function checkVideoLoaded() {
-            const video = document.querySelector('video');
-            if (video.readyState >= 3) { // HAVE_FUTURE_DATA state
-                hideLoader();
-            } else {
-                video.addEventListener('canplay', hideLoader);
+                // Start content animations after loader is hidden
+                setTimeout(() => {
+                    animateNumber('facilitiesCount', 500);
+                    animateNumber('votesCount', 25000);
+                    animateNumber('categoriesCount', 12);
+                }, 1000);
             }
-        }
 
-        // Call checkVideoLoaded to start the process
-        checkVideoLoaded();
+            function checkVideoLoaded() {
+                const video = document.querySelector('video');
+                if (video.readyState >= 3) {
+                    hideLoader();
+                } else {
+                    video.addEventListener('canplay', hideLoader);
+                }
+            }
+
+
+            // Call checkVideoLoaded to start the process
+            checkVideoLoaded();
     </script>
 
 </body>
