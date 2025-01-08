@@ -66,7 +66,6 @@
             border-radius: 3px;
         }
 
-
         .fade-in {
             opacity: 0;
             transform: translateY(40px);
@@ -78,7 +77,6 @@
             transform: translateY(0);
         }
 
-
         .zoom-hover {
             transition: transform 0.3s ease-in-out;
         }
@@ -87,6 +85,7 @@
             transform: scale(1.05);
         }
 
+        /* Box hover effect */
         .box-hover {
             transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -205,6 +204,7 @@
             z-index: 9999;
             display: flex;
             flex-direction: column;
+            /* Add this line to stack items vertically */
             justify-content: center;
             align-items: center;
             transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
@@ -234,6 +234,7 @@
             }
         }
 
+        /* Prevent scroll during loading */
         .loading {
             overflow: hidden;
         }
@@ -248,15 +249,10 @@
             color: aliceblue;
         }
 
-        html {
+        html{
             overflow-x: hidden;
         }
-
-        .menu-open #mobileMenu {
-            display: block;
-        }
     </style>
-    <link rel="preload" as="video" href="hero.mp4">
 </head>
 
 <body class="bg-gray-900 custom-scrollbar">
@@ -267,6 +263,7 @@
             "Did you know? Over 50,000 storage facilities compete for excellence each year."
         </div>
     </div>
+
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-40 transition-all duration-500 bg-gray-900/95 backdrop-blur-sm" id="mainNav">
@@ -336,6 +333,7 @@
             </div>
         </div>
     </nav>
+
 
     <section id="home" class="min-h-screen relative overflow-hidden bg-gray-900 pt-20">
         <div class="absolute inset-0 gradient-background opacity-10"></div>
@@ -522,7 +520,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="indoor">
                     <div class="relative">
-                        <img src="indoor.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="indoor.png" alt="Facility" class="w-full h-48 object-cover">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Indoor Storage
@@ -580,7 +578,7 @@
                                 onclick="shareOnSocial('twitter')">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path
-                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247                                        -2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                                 </svg>
                             </button>
                             <button
@@ -596,7 +594,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="rv">
                     <div class="relative">
-                        <img src="RV.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="RV.png" alt="Facility" class="w-full h-48 object-cover">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 RV Storage
@@ -671,7 +669,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="outdoor">
                     <div class="relative">
-                        <img src="outdoor.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="outdoor.png" alt="Facility" class="w-full h-48 object-cover">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Outdoor Storage
@@ -745,7 +743,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="security">
                     <div class="relative">
-                        <img src="secure.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="secure.png" alt="Facility" class="w-full h-48 object-cover">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Security
@@ -820,7 +818,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="customer">
                     <div class="relative">
-                        <img src="customer4.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="customer4.png" alt="Facility" class="w-full h-48 object-cover">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Customer Service
@@ -895,7 +893,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="innovative">
                     <div class="relative">
-                        <img src="innovative.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="innovative.png" alt="Facility" class="w-full h-48 object-cover">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Most Innovative
@@ -954,7 +952,7 @@
                                 onclick="shareOnSocial('twitter')">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path
-                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07                                         1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                                 </svg>
                             </button>
                             <button
@@ -1069,7 +1067,7 @@
                         our customer base."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client1.jpg" alt="John S." class="rounded-full w-12 h-12 mr-4" loading="lazy">
+                        <img src="client1.jpg" alt="John S." class="rounded-full w-12 h-12 mr-4">
                         <p class="text-white/60">- John S., Facility Manager</p>
                     </div>
                 </div>
@@ -1079,7 +1077,7 @@
                         self-storage facility."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client2.jpg" alt="Lisa M." class="rounded-full w-12 h-12 mr-4" loading="lazy">
+                        <img src="client2.jpg" alt="Lisa M." class="rounded-full w-12 h-12 mr-4">
                         <p class="text-white/60">- Lisa M., Owner Operator</p>
                     </div>
                 </div>
@@ -1090,7 +1088,7 @@
                         community."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client5.png" alt="Carlos P." class="rounded-full w-12 h-12 mr-4" loading="lazy">
+                        <img src="client5.png" alt="Carlos P." class="rounded-full w-12 h-12 mr-4">
                         <p class="text-white/60">- Carlos P., Facility Coordinator</p>
                     </div>
                 </div>
@@ -1101,13 +1099,14 @@
                         are proud to have our facility rated as one of the best."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client6.png" alt="Sarah W." class="rounded-full w-12 h-12 mr-4" loading="lazy">
+                        <img src="client6.png" alt="Sarah W." class="rounded-full w-12 h-12 mr-4">
                         <p class="text-white/60">- Sarah W., General Manager</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Submission Form -->
     <section id="submit" class="py-20 bg-gray-900">
@@ -1383,6 +1382,8 @@
         </div>
     </section>
 
+
+
     <footer class="py-16 bg-gray-900/50 border-t border-white/10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -1487,283 +1488,293 @@
     </div>
 
     <script>
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('mainNav');
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-gray-900/95', 'backdrop-blur-sm');
-            } else {
-                nav.classList.remove('bg-gray-900/95', 'backdrop-blur-sm');
-            }
-        });
-
-        // Add after line 600 (before closing body tag)
-        const gridViewBtn = document.getElementById('grid-view-btn');
-        const listViewBtn = document.getElementById('list-view-btn');
-        const facilitiesGrid = document.getElementById('facility-cards-container');
-
-        gridViewBtn.addEventListener('click', () => {
-            facilitiesGrid.classList.remove('grid-cols-1');
-            facilitiesGrid.classList.add('md:grid-cols-2', 'lg:grid-cols-3');
-        });
-
-        listViewBtn.addEventListener('click', () => {
-            facilitiesGrid.classList.remove('md:grid-cols-2', 'lg:grid-cols-3');
-            facilitiesGrid.classList.add('grid-cols-1');
-        });
-
-        // Add around line 590
-        function handleVote(facilityId, voteType) {
-            // Check if user has voted today
-            const lastVoteDate = localStorage.getItem(`lastVote_${facilityId}`);
-            const today = new Date().toDateString();
-
-            if (lastVoteDate === today) {
-                alert('You can only vote once per day for each facility');
-                return;
-            }
-            // Show CAPTCHA verification
-            showCaptchaModal();
-
-            // Store vote timestamp
-            localStorage.setItem(`lastVote_${facilityId}`, today);
-            // Animate feedback
-            const btn = document.querySelector(`[data-facility-id="${facilityId}"] [data-vote-type="${voteType}"]`);
-            btn.classList.add('scale-110');
-            setTimeout(() => btn.classList.remove('scale-110'), 200);
-
-            // Show thank you message
-            const thankYou = document.createElement('div');
-            thankYou.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-            thankYou.textContent = 'Thank you for voting!';
-            document.body.appendChild(thankYou);
-            setTimeout(() => thankYou.remove(), 3000);
-        }
-
-        // Handle Category Filtering
-        const categoryFilter = document.getElementById('categoryFilter');
-        const facilityCards = document.querySelectorAll('[data-category]');
-
-        categoryFilter.addEventListener('change', function () {
-            const selectedCategory = this.value;
-
-            facilityCards.forEach(card => {
-                const cardCategory = card.dataset.category;
-                if (selectedCategory === 'all' || cardCategory === selectedCategory) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-
-        function shareOnSocial(platform) {
-            const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent('Check out this amazing storage facility!');
-
-            let shareUrl = '';
-            if (platform === 'twitter') {
-                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-            } else if (platform === 'facebook') {
-                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-            }
-
-            window.open(shareUrl, '_blank', 'width=600,height=400');
-        }
-
-        // Add around line 620
-        function updateCountdown() {
-            const endDate = new Date('2025-12-31T23:59:59').getTime();
-            const now = new Date().getTime();
-            const distance = endDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m`;
-        }
-
-        setInterval(updateCountdown, 60000);
-        updateCountdown();
-
-        // Function to handle file uploads
-        const fileInput = document.getElementById('file-input');
-        const filePreview = document.getElementById('file-preview');
-        const fileUploadArea = document.getElementById('file-upload-area');
-        fileUploadArea.addEventListener('click', () => fileInput.click());
-
-        fileInput.addEventListener('change', () => {
-            filePreview.innerHTML = '';
-            const files = Array.from(fileInput.files);
-            files.forEach(file => {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    const img = document.createElement('img');
-                    img.src = event.target.result;
-                    img.alt = file.name;
-                    img.className = 'w-20 h-20 object-cover rounded-lg mr-2 mb-2';
-                    filePreview.appendChild(img);
-
+        (function () {
+                // --- Utility Functions ---
+                const debounce = (func, delay) => {
+                    let timeoutId;
+                    return (...args) => {
+                        clearTimeout(timeoutId);
+                        timeoutId = setTimeout(() => func(...args), delay);
+                    };
                 };
-                reader.readAsDataURL(file);
-            })
-        });
 
-        fileUploadArea.addEventListener('dragover', (event) => {
-            event.preventDefault();
-            fileUploadArea.classList.add('border-yellow-500');
-        });
+                const animateNumber = (elementId, target) => {
+                    let current = 0;
+                    const element = document.getElementById(elementId);
+                    const duration = 2000;
+                    const steps = 60;
+                    const increment = target / steps;
+                    const interval = duration / steps;
 
-        fileUploadArea.addEventListener('dragleave', () => {
-            fileUploadArea.classList.remove('border-yellow-500')
-        })
-        fileUploadArea.addEventListener('drop', (event) => {
-            event.preventDefault();
-            fileUploadArea.classList.remove('border-yellow-500')
-            fileInput.files = event.dataTransfer.files;
-            const changeEvent = new Event('change');
-            fileInput.dispatchEvent(changeEvent);
-        });
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        element.textContent = Math.round(current).toLocaleString();
+                    }, interval);
+                };
 
-    </script>
+                const showCaptchaModal = () => {
+                    document.getElementById('captchaModal').classList.remove('hidden');
+                };
 
-    <script>
+                const hideCaptchaModal = () => {
+                    document.getElementById('captchaModal').classList.add('hidden');
+                };
 
-        function animateNumber(elementId, target) {
-            let current = 0;
-            const element = document.getElementById(elementId);
-            const duration = 2000;
-            const startTime = performance.now();
+                const shareOnSocial = (platform) => {
+                    const url = encodeURIComponent(window.location.href);
+                    const text = encodeURIComponent('Check out this amazing storage facility!');
+                    let shareUrl = '';
+                    if (platform === 'twitter') {
+                        shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                    } else if (platform === 'facebook') {
+                        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    }
+                    window.open(shareUrl, '_blank', 'width=600,height=400');
+                };
+
+                // Function to handle file uploads
+                const handleFileUpload = () => {
+                    const fileInput = document.getElementById('file-input');
+                    const filePreview = document.getElementById('file-preview');
+                    const fileUploadArea = document.getElementById('file-upload-area');
 
 
-            function updateNumber(currentTime) {
-                const progress = Math.min(1, (currentTime - startTime) / duration);
+                    fileUploadArea.addEventListener('click', () => fileInput.click());
 
-                current = progress * target;
+                    fileInput.addEventListener('change', () => {
+                        filePreview.innerHTML = '';
+                        const files = Array.from(fileInput.files);
+                        files.forEach(file => {
+                            const reader = new FileReader();
+                            reader.onload = (event) => {
+                                const img = document.createElement('img');
+                                img.src = event.target.result;
+                                img.alt = file.name;
+                                img.className = 'w-20 h-20 object-cover rounded-lg mr-2 mb-2';
+                                filePreview.appendChild(img);
 
-                element.textContent = Math.round(current).toLocaleString();
+                            };
+                            reader.readAsDataURL(file);
+                        })
+                    });
+
+                    fileUploadArea.addEventListener('dragover', (event) => {
+                        event.preventDefault();
+                        fileUploadArea.classList.add('border-yellow-500');
+                    });
+
+                    fileUploadArea.addEventListener('dragleave', () => {
+                        fileUploadArea.classList.remove('border-yellow-500')
+                    })
+                    fileUploadArea.addEventListener('drop', (event) => {
+                        event.preventDefault();
+                        fileUploadArea.classList.remove('border-yellow-500')
+                        fileInput.files = event.dataTransfer.files;
+                        const changeEvent = new Event('change');
+                        fileInput.dispatchEvent(changeEvent);
+                    });
+                };
 
 
-                if (progress < 1) {
-                    requestAnimationFrame(updateNumber);
+                // --- Intersection Observer for fade-in animations ---
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target); // Unobserve after animation
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+                // --- Navbar background on scroll (debounced) ---
+                const nav = document.getElementById('mainNav');
+                const handleScroll = () => {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('bg-gray-900/95', 'backdrop-blur-sm');
+                    } else {
+                        nav.classList.remove('bg-gray-900/95', 'backdrop-blur-sm');
+                    }
+                };
+
+                window.addEventListener('scroll', debounce(handleScroll, 100));
+
+                // --- Grid/List View Buttons ---
+                const gridViewBtn = document.getElementById('grid-view-btn');
+                const listViewBtn = document.getElementById('list-view-btn');
+                const facilitiesGrid = document.getElementById('facility-cards-container');
+
+                gridViewBtn.addEventListener('click', () => {
+                    facilitiesGrid.classList.remove('grid-cols-1');
+                    facilitiesGrid.classList.add('md:grid-cols-2', 'lg:grid-cols-3');
+                });
+
+                listViewBtn.addEventListener('click', () => {
+                    facilitiesGrid.classList.remove('md:grid-cols-2', 'lg:grid-cols-3');
+                    facilitiesGrid.classList.add('grid-cols-1');
+                });
+
+                // --- Voting Logic ---
+                function handleVote(facilityId, voteType) {
+                    // Check if user has voted today
+                    const lastVoteDate = localStorage.getItem(`lastVote_${facilityId}`);
+                    const today = new Date().toDateString();
+
+                    if (lastVoteDate === today) {
+                        alert('You can only vote once per day for each facility');
+                        return;
+                    }
+                    // Show CAPTCHA verification
+                    showCaptchaModal();
+
+                    // Store vote timestamp
+                    localStorage.setItem(`lastVote_${facilityId}`, today);
+                    // Animate feedback
+                    const btn = document.querySelector(`[data-facility-id="${facilityId}"] [data-vote-type="${voteType}"]`);
+                    btn.classList.add('scale-110');
+                    setTimeout(() => btn.classList.remove('scale-110'), 200);
+
+                    // Show thank you message
+                    const thankYou = document.createElement('div');
+                    thankYou.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+                    thankYou.textContent = 'Thank you for voting!';
+                    document.body.appendChild(thankYou);
+                    setTimeout(() => thankYou.remove(), 3000);
                 }
-            }
 
-            requestAnimationFrame(updateNumber)
-        }
+                // --- Category Filtering ---
+                const categoryFilter = document.getElementById('categoryFilter');
+                const facilityCards = document.querySelectorAll('[data-category]');
 
-        function showCaptchaModal() {
-            document.getElementById('captchaModal').classList.remove('hidden');
-        }
+                categoryFilter.addEventListener('change', function () {
+                    const selectedCategory = this.value;
 
-        function hideCaptchaModal() {
-            document.getElementById('captchaModal').classList.add('hidden');
-        }
+                    facilityCards.forEach(card => {
+                        const cardCategory = card.dataset.category;
+                        card.style.display = (selectedCategory === 'all' || cardCategory === selectedCategory) ? 'block' : 'none';
+                    });
+                });
 
-        function verifyCaptcha() {
-            // Replace with actual CAPTCHA verification logic
-            hideCaptchaModal();
-            alert('CAPTCHA verification successful. Submit the form!');
-        }
+                // --- Countdown Timer ---
+                const updateCountdown = () => {
+                    const endDate = new Date('2025-12-31T23:59:59').getTime();
+                    const now = new Date().getTime();
+                    const distance = endDate - now;
 
-        document.getElementById('burgerBtn').addEventListener('click', function () {
-            document.body.classList.toggle('menu-open');
-        });
+                    if (distance <= 0) {
+                        document.getElementById('countdown').innerHTML = "Time's up!"; // Or any other ending message
+                        clearInterval(countdownInterval);  // Clear interval if date is reached
+                        return;
+                    }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function (e) {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const burgerBtn = document.getElementById('burgerBtn');
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-            if (!mobileMenu.contains(e.target) && !burgerBtn.contains(e.target) && document.body.classList.contains('menu-open')) {
-                document.body.classList.remove('menu-open');
-            }
-        });
+                    document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m`;
+                };
+                const countdownInterval = setInterval(updateCountdown, 60000);
+                updateCountdown();
 
-        document.body.classList.add('loading');
+                // --- CAPTCHA Functions ---
+                function verifyCaptcha() {
+                    // Replace with actual CAPTCHA verification logic
+                    hideCaptchaModal();
+                    alert('CAPTCHA verification successful. Submit the form!');
+                }
 
-        const tips = [
-            "Did you know? Over 50,000 storage facilities compete for excellence each year.",
-            "Our awards recognize innovation in self-storage design and service.",
-            "Join thousands of voters in celebrating industry excellence.",
-            "Loading your premium storage awards experience..."
-        ];
 
-        let tipIndex = 0;
-        const tipElement = document.querySelector('.loading-tips');
+                // --- Mobile Menu ---
+                document.getElementById('burgerBtn').addEventListener('click', function () {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    mobileMenu.classList.toggle('hidden');
+                });
 
-        function changeTip() {
-            // Animate the current tip out
-            gsap.to(tipElement, {
-                y: -20, // Slide up
-                opacity: 0,
-                duration: 0.5,
-                ease: 'power2.in',
-                onComplete: () => {
-                    // Change the text content
-                    tipElement.textContent = tips[tipIndex];
-                    tipIndex = (tipIndex + 1) % tips.length;
+                document.addEventListener('click', function (e) {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    const burgerBtn = document.getElementById('burgerBtn');
 
-                    // Animate the new tip in
-                    gsap.fromTo(tipElement, {
-                        y: 20,  // Start below
+                    if (!mobileMenu.contains(e.target) && !burgerBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+
+                // --- Loading Screen & Tips ---
+                const tips = [
+                    "Did you know? Over 50,000 storage facilities compete for excellence each year.",
+                    "Our awards recognize innovation in self-storage design and service.",
+                    "Join thousands of voters in celebrating industry excellence.",
+                    "Loading your premium storage awards experience..."
+                ];
+
+                let tipIndex = 0;
+                const tipElement = document.querySelector('.loading-tips');
+
+                function changeTip() {
+                    gsap.to(tipElement, {
+                        y: -20,
                         opacity: 0,
-                    }, {
-                        y: 0,   // Slide up
-                        opacity: 1,
                         duration: 0.5,
-                        ease: 'power2.out'
+                        ease: 'power2.in',
+                        onComplete: () => {
+                            tipElement.textContent = tips[tipIndex];
+                            tipIndex = (tipIndex + 1) % tips.length;
+                            gsap.fromTo(tipElement, {
+                                y: 20,
+                                opacity: 0,
+                            }, {
+                                y: 0,
+                                opacity: 1,
+                                duration: 0.5,
+                                ease: 'power2.out'
+                            });
+                        }
                     });
                 }
-            });
-        }
+                const checkVideoLoaded = () => {
+                    const loadingScreen = document.getElementById('loadingScreen');
+                    const video = document.querySelector('video');
+                    if (video && video.readyState >= 3) {
+                        loadingScreen.classList.add('loaded');
+                        document.body.classList.remove('loading');
 
+                        // Start content animations after loader is hidden
+                        setTimeout(() => {
+                            animateNumber('facilitiesCount', 500);
+                            animateNumber('votesCount', 25000);
+                            animateNumber('categoriesCount', 12);
+                        }, 1000);
+                    } else {
+                        loadingScreen.classList.add('loaded');
+                        document.body.classList.remove('loading');
+                        setTimeout(() => {
+                            animateNumber('facilitiesCount', 500);
+                            animateNumber('votesCount', 25000);
+                            animateNumber('categoriesCount', 12);
+                        }, 1000);
+                    }
+                };
 
-        // Initialize the tips before anything is loaded
-        tipElement.textContent = tips[tipIndex];
-        tipIndex = (tipIndex + 1) % tips.length;
-        setInterval(changeTip, 3000);
+                // Initialize the tips before anything is loaded
+                tipElement.textContent = tips[tipIndex];
+                tipIndex = (tipIndex + 1) % tips.length;
+                setInterval(changeTip, 3000);
 
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.body.classList.add('loading');
+                    handleFileUpload()
+                    checkVideoLoaded(); // Start loader check right away
 
-        function hideLoader() {
-            const loadingScreen = document.getElementById('loadingScreen');
-            loadingScreen.classList.add('loaded');
-            document.body.classList.remove('loading');
+                });
 
-            // Start content animations after loader is hidden
-            setTimeout(() => {
-                animateNumber('facilitiesCount', 500);
-                animateNumber('votesCount', 25000);
-                animateNumber('categoriesCount', 12);
-            }, 1000);
-        }
-
-        function checkVideoLoaded() {
-            const video = document.querySelector('video');
-            if (video.readyState >= 3) {
-                hideLoader();
-            } else {
-                video.addEventListener('canplay', hideLoader);
-            }
-        }
-
-
-        // Call checkVideoLoaded to start the process
-        checkVideoLoaded();
+            })();
     </script>
 
 </body>
