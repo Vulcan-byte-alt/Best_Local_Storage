@@ -66,6 +66,7 @@
             border-radius: 3px;
         }
 
+
         .fade-in {
             opacity: 0;
             transform: translateY(40px);
@@ -77,6 +78,7 @@
             transform: translateY(0);
         }
 
+
         .zoom-hover {
             transition: transform 0.3s ease-in-out;
         }
@@ -85,7 +87,6 @@
             transform: scale(1.05);
         }
 
-        /* Box hover effect */
         .box-hover {
             transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
         }
@@ -204,7 +205,6 @@
             z-index: 9999;
             display: flex;
             flex-direction: column;
-            /* Add this line to stack items vertically */
             justify-content: center;
             align-items: center;
             transition: transform 1s cubic-bezier(0.7, 0, 0.3, 1);
@@ -234,7 +234,6 @@
             }
         }
 
-        /* Prevent scroll during loading */
         .loading {
             overflow: hidden;
         }
@@ -248,7 +247,16 @@
             margin-top: 1rem;
             color: aliceblue;
         }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        .menu-open #mobileMenu {
+            display: block;
+        }
     </style>
+    <link rel="preload" as="video" href="hero.mp4">
 </head>
 
 <body class="bg-gray-900 custom-scrollbar">
@@ -259,7 +267,6 @@
             "Did you know? Over 50,000 storage facilities compete for excellence each year."
         </div>
     </div>
-
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-40 transition-all duration-500 bg-gray-900/95 backdrop-blur-sm" id="mainNav">
@@ -329,7 +336,6 @@
             </div>
         </div>
     </nav>
-
 
     <section id="home" class="min-h-screen relative overflow-hidden bg-gray-900 pt-20">
         <div class="absolute inset-0 gradient-background opacity-10"></div>
@@ -516,7 +522,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="indoor">
                     <div class="relative">
-                        <img src="indoor.png" alt="Facility" class="w-full h-48 object-cover">
+                        <img src="indoor.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Indoor Storage
@@ -574,7 +580,7 @@
                                 onclick="shareOnSocial('twitter')">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path
-                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247                                        -2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                                 </svg>
                             </button>
                             <button
@@ -590,7 +596,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="rv">
                     <div class="relative">
-                        <img src="RV.png" alt="Facility" class="w-full h-48 object-cover">
+                        <img src="RV.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 RV Storage
@@ -665,7 +671,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="outdoor">
                     <div class="relative">
-                        <img src="outdoor.png" alt="Facility" class="w-full h-48 object-cover">
+                        <img src="outdoor.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Outdoor Storage
@@ -739,7 +745,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="security">
                     <div class="relative">
-                        <img src="secure.png" alt="Facility" class="w-full h-48 object-cover">
+                        <img src="secure.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Security
@@ -814,7 +820,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="customer">
                     <div class="relative">
-                        <img src="customer4.png" alt="Facility" class="w-full h-48 object-cover">
+                        <img src="customer4.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Customer Service
@@ -889,7 +895,7 @@
                 <div class="bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-yellow-500/50 transition-all fade-in zoom-hover box-hover"
                     data-category="innovative">
                     <div class="relative">
-                        <img src="innovative.png" alt="Facility" class="w-full h-48 object-cover">
+                        <img src="innovative.png" alt="Facility" class="w-full h-48 object-cover" loading="lazy">
                         <div class="absolute top-4 right-4 flex gap-2">
                             <span class="px-3 py-1 bg-blue-500/80 backdrop-blur-md rounded-full text-white text-sm">
                                 Most Innovative
@@ -948,7 +954,7 @@
                                 onclick="shareOnSocial('twitter')">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path
-                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                        d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07                                         1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                                 </svg>
                             </button>
                             <button
@@ -1063,7 +1069,7 @@
                         our customer base."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client1.jpg" alt="John S." class="rounded-full w-12 h-12 mr-4">
+                        <img src="client1.jpg" alt="John S." class="rounded-full w-12 h-12 mr-4" loading="lazy">
                         <p class="text-white/60">- John S., Facility Manager</p>
                     </div>
                 </div>
@@ -1073,7 +1079,7 @@
                         self-storage facility."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client2.jpg" alt="Lisa M." class="rounded-full w-12 h-12 mr-4">
+                        <img src="client2.jpg" alt="Lisa M." class="rounded-full w-12 h-12 mr-4" loading="lazy">
                         <p class="text-white/60">- Lisa M., Owner Operator</p>
                     </div>
                 </div>
@@ -1084,7 +1090,7 @@
                         community."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client5.png" alt="Carlos P." class="rounded-full w-12 h-12 mr-4">
+                        <img src="client5.png" alt="Carlos P." class="rounded-full w-12 h-12 mr-4" loading="lazy">
                         <p class="text-white/60">- Carlos P., Facility Coordinator</p>
                     </div>
                 </div>
@@ -1095,14 +1101,13 @@
                         are proud to have our facility rated as one of the best."
                     </p>
                     <div class="flex items-center mt-4">
-                        <img src="client6.png" alt="Sarah W." class="rounded-full w-12 h-12 mr-4">
+                        <img src="client6.png" alt="Sarah W." class="rounded-full w-12 h-12 mr-4" loading="lazy">
                         <p class="text-white/60">- Sarah W., General Manager</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Submission Form -->
     <section id="submit" class="py-20 bg-gray-900">
@@ -1378,8 +1383,6 @@
         </div>
     </section>
 
-
-
     <footer class="py-16 bg-gray-900/50 border-t border-white/10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -1639,32 +1642,29 @@
     </script>
 
     <script>
+
         function animateNumber(elementId, target) {
             let current = 0;
             const element = document.getElementById(elementId);
-            const duration = 2000; // 2 seconds
-            const steps = 60;
-            const increment = target / steps;
-            const interval = duration / steps;
+            const duration = 2000;
+            const startTime = performance.now();
 
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
+
+            function updateNumber(currentTime) {
+                const progress = Math.min(1, (currentTime - startTime) / duration);
+
+                current = progress * target;
+
                 element.textContent = Math.round(current).toLocaleString();
-            }, interval);
-        }
 
-        // Start animations when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                animateNumber('facilitiesCount', 500);
-                animateNumber('votesCount', 25000);
-                animateNumber('categoriesCount', 12);
-            }, 1400); // Delay to match with stats animation
-        });
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                }
+            }
+
+            requestAnimationFrame(updateNumber)
+        }
 
         function showCaptchaModal() {
             document.getElementById('captchaModal').classList.remove('hidden');
@@ -1681,8 +1681,7 @@
         }
 
         document.getElementById('burgerBtn').addEventListener('click', function () {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('menu-open');
         });
 
         // Close menu when clicking outside
@@ -1690,8 +1689,8 @@
             const mobileMenu = document.getElementById('mobileMenu');
             const burgerBtn = document.getElementById('burgerBtn');
 
-            if (!mobileMenu.contains(e.target) && !burgerBtn.contains(e.target) && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
+            if (!mobileMenu.contains(e.target) && !burgerBtn.contains(e.target) && document.body.classList.contains('menu-open')) {
+                document.body.classList.remove('menu-open');
             }
         });
 
@@ -1738,7 +1737,8 @@
         tipElement.textContent = tips[tipIndex];
         tipIndex = (tipIndex + 1) % tips.length;
         setInterval(changeTip, 3000);
-            
+
+
         function hideLoader() {
             const loadingScreen = document.getElementById('loadingScreen');
             loadingScreen.classList.add('loaded');
